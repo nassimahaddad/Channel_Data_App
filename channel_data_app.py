@@ -9,8 +9,7 @@ import pandas as pd
 import os # استيراد os للتحقق من وجود الملف
 
 # استيراد الإعدادات من config_likes.py
-from config_likes import CHANNEL_DATA_DATABASE_FILE
-
+from config import CHANNEL_DATA_DATABASE_FILE # تم التعديل هنا
 # --- Database Functions ---
 def init_db():
     """تهيئة قاعدة البيانات وإنشاء الجداول إذا لم تكن موجودة."""
