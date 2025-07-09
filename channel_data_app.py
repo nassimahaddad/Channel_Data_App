@@ -8,8 +8,9 @@ import base64
 import pandas as pd
 import os # استيراد os للتحقق من وجود الملف
 
-# استيراد الإعدادات من config_likes.py
-from config import CHANNEL_DATA_DATABASE_FILE # تم التعديل هنا
+# استيراد الإعدادات من config.py (تم التعديل هنا)
+from config import CHANNEL_DATA_DATABASE_FILE
+
 # --- Database Functions ---
 def init_db():
     """تهيئة قاعدة البيانات وإنشاء الجداول إذا لم تكن موجودة."""
@@ -299,7 +300,7 @@ def main():
     # --- إضافة الشعار هنا ---
     try:
         st.markdown(
-            f"<div class='logo-container'><img src='data:image/png;base64,{base64.b64encode(open('nassimacode.png', 'rb').read()).decode()}' alt='NITRO QASAR Logo' style='max-width: 200px; border-radius: 50%; box-shadow: 0px 0px 15px rgba(0,0,0,0.3);'></div>",
+            f"<div class='logo-container'><img src='data:image/png;base64,{base64.b64encode(open('nitroqasar.png', 'rb').read()).decode()}' alt='NITRO QASAR Logo' style='max-width: 200px; border-radius: 50%; box-shadow: 0px 0px 15px rgba(0,0,0,0.3);'></div>",
             unsafe_allow_html=True
         )
     except FileNotFoundError:
@@ -327,7 +328,6 @@ def main():
             if extracted_channel_id:
                 add_channel_to_db(st.session_state.user_session_id, channel_url, extracted_channel_id, channel_name)
             else:
-                # رسالة تحذير معدلة لتكون أوضح وأكثر توجيهاً
                 st.warning("⚠️ يبدو أن هذا ليس رابط قناة يوتيوب مباشر.")
                 st.info("💡 يرجى إدخال رابط قناتك الرئيسي والمباشر (مثل: `youtube.com/channel/UC...`، `youtube.com/user/...`، `youtube.com/c/...`، أو `youtube.com/@اسم_قناتك`). لا يمكننا استخراج معرف القناة من روابط الفيديوهات.")
         else:
@@ -445,7 +445,8 @@ def main():
                 "💡 هذه المبادرة المجانية هي نقطة انطلاق رائعة لنمو قناتك من خلال التعاون المجتمعي. "
                 "أما برامجنا الاحترافية والمدفوعة، فهي مصممة خصيصًا لأصحاب المشاريع الجادة الذين يبحثون عن حلول قوية ونتائج مضمونة، وتوفر خدمات متقدمة تتجاوز التبادل اليدوي لنمو لا مثيل له."
                 "</p>"
-                "<a href='https://nassimacode-dashboard.streamlit.app' target='_blank' class='promotion-button' style='text-decoration: none;'>اكتشف برامجنا الاحترافية الآن!</a>"
+                # هذا هو السطر الذي تحتاجين لتعديله بالرابط الفعلي
+                "<a href='YOUR_MAIN_DASHBOARD_APP_URL' target='_blank' class='promotion-button' style='text-decoration: none;'>اكتشف برامجنا الاحترافية الآن!</a>"
                 "</div>", unsafe_allow_html=True)
 
     st.markdown("<p class='footer-text'>&copy; 2025 جميع الحقوق محفوظة. بناء مجتمع قوي لنمو قناتك.</p>", unsafe_allow_html=True)
