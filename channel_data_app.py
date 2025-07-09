@@ -300,7 +300,7 @@ def main():
     # --- إضافة الشعار هنا ---
     try:
         st.markdown(
-            f"<div class='logo-container'><img src='data:image/png;base64,{base64.b64encode(open('nitroqasar.png', 'rb').read()).decode()}' alt='NITRO QASAR Logo' style='max-width: 200px; border-radius: 50%; box-shadow: 0px 0px 15px rgba(0,0,0,0.3);'></div>",
+            f"<div class='logo-container'><img src='data:image/png;base64,{base64.b64encode(open('nassimacode.png', 'rb').read()).decode()}' alt='NITRO QASAR Logo' style='max-width: 200px; border-radius: 50%; box-shadow: 0px 0px 15px rgba(0,0,0,0.3);'></div>",
             unsafe_allow_html=True
         )
     except FileNotFoundError:
